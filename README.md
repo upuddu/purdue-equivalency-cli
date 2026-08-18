@@ -11,7 +11,22 @@ articulates to it.
 ## Install
 
 ```
-go install github.com/upuddu/purdue-equivalency-cli@latest
+go install github.com/upuddu/purdue-equivalency-cli/cmd/ptc@latest
+```
+
+**The installed command is `ptc`**, not the repository name. It lands in
+`$(go env GOPATH)/bin`, which needs to be on your `PATH`:
+
+```
+export PATH="$PATH:$(go env GOPATH)/bin"
+```
+
+Verify with `ptc help`.
+
+To build from a clone instead:
+
+```
+go build -o ptc ./cmd/ptc
 ```
 
 ## Usage
@@ -19,7 +34,7 @@ go install github.com/upuddu/purdue-equivalency-cli@latest
 Start from a Purdue course you need:
 
 ```
-$ purdue-equivalency-cli who MA 42500
+$ ptc who MA 42500
 STATE  SCHOOL                          COURSE                              CR  PURDUE
 CA     Univ of California/Berkeley     MATH XB205 Theory Of Functions Cmp  4   MA 42500 Elem Complex Anly
 FL     Florida Institute of Technlgy   MTH 3101 Complex Variables          3   MA 42500 Elem Complex Anly
@@ -30,10 +45,10 @@ IN     Indiana University Bloomington  MATH M415 Elem Complex Variables W  3   M
 Or from a school you might attend:
 
 ```
-$ purdue-equivalency-cli schools WI
+$ ptc schools WI
 ...
 001846  Univ of Wisconsin Madison
-$ purdue-equivalency-cli equiv 001846 MATH 341 --state WI
+$ ptc equiv 001846 MATH 341 --state WI
 ```
 
 ### Commands

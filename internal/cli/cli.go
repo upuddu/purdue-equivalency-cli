@@ -1,4 +1,4 @@
-// Package cli implements the purdue-equivalency-cli command line.
+// Package cli implements the ptc command line.
 package cli
 
 import (
@@ -12,9 +12,9 @@ import (
 	"github.com/upuddu/purdue-equivalency-cli/internal/equiv"
 )
 
-const usage = `purdue-equivalency-cli queries Purdue's Transfer Credit Course Equivalency Guide.
+const usage = `ptc queries Purdue's Transfer Credit Course Equivalency Guide.
 
-usage: purdue-equivalency-cli <command> [flags] [arguments]
+usage: ptc <command> [flags] [arguments]
 
 Reverse lookup — start from the Purdue course you need:
   who <SUBJ> <NUM>       schools with an articulation for that Purdue course
