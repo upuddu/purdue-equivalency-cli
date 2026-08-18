@@ -21,7 +21,9 @@ go install github.com/upuddu/purdue-equivalency-cli/cmd/ptc@latest
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-Verify with `ptc help`.
+Verify with `ptc help`. On zsh, a shell that was already open when you
+installed will report `command not found` even once the path is right — it
+caches the commands it found at startup. Run `rehash`, or open a new shell.
 
 To build from a clone instead:
 
